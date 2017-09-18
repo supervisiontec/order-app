@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/estoke</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">7259</property>
+        
+        <property name="hibernate.connection.charSet">UTF-8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
+        
+        <!--<prop key="hibernate.connection.useUnicode">true</prop>-->
+            <!--<prop key="hibernate.connection.characterEncoding">UTF-8</prop>-->
+        <!--<prop key="hibernate.connection.charSet">UTF-8</prop>-->
+        
+        <!--item control panel-->
+        <mapping class="com.sv.orderapp.item_manager.model.MMainCategory"/>
+        <mapping class="com.sv.orderapp.item_manager.model.MDepartment"/>
+        <mapping class="com.sv.orderapp.item_manager.model.MTransactor"/>
+        <mapping class="com.sv.orderapp.item_manager.model.MSubCategory"/>
+        <mapping class="com.sv.orderapp.item_manager.model.MItem"/>
+        
+        <!--customer control panel-->
+        <mapping class="com.sv.orderapp.customer_control_panel.model.MTransactor"/>
+        <mapping class="com.sv.orderapp.customer_control_panel.model.MRoute"/>
+        
+        <!--supplier control panel-->
+        <mapping class="com.sv.orderapp.supplier_control_panel.model.MTransactor"/>
+        <mapping class="com.sv.orderapp.supplier_control_panel.model.MRoute"/>
+        
+        <!--user control panel-->
+        <mapping class="com.sv.orderapp.user_control_panel.model.MUser"/>
+        
+        <!--order approval-->
+        <mapping class="com.sv.orderapp.order_approval.model.MItem"/>
+        <mapping class="com.sv.orderapp.order_approval.model.MTransactor"/>
+        <mapping class="com.sv.orderapp.order_approval.model.TOrderDetail"/>
+        <mapping class="com.sv.orderapp.order_approval.model.MRoute"/>
+        <mapping class="com.sv.orderapp.order_approval.model.MUser"/>
+        <mapping class="com.sv.orderapp.order_approval.model.TOrderSummary"/>
+        
+        <!--rest-->
+        <mapping class="com.sv.orderapp.rest.model.MDepartment"/>
+        <mapping class="com.sv.orderapp.rest.model.MRoute"/>
+        <mapping class="com.sv.orderapp.rest.model.MSubCategory"/>
+        <mapping class="com.sv.orderapp.rest.model.MTransactor"/>
+        <mapping class="com.sv.orderapp.rest.model.MItem"/>
+        <mapping class="com.sv.orderapp.rest.model.TOrderDetail"/>
+        <mapping class="com.sv.orderapp.rest.model.TOrderSummary"/>
+        <mapping class="com.sv.orderapp.rest.model.MUser"/>
+        <mapping class="com.sv.orderapp.rest.model.MMainCategory"/>
+    </session-factory>
+</hibernate-configuration>

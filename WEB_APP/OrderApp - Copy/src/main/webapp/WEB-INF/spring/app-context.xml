@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+    
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+    
+    <!--START ITEM MANAGER-->
+    <beans:bean id="itemManagerRepository" class="com.sv.orderapp.item_manager.ItemManagerReposirotyImpl">
+    </beans:bean>
+    
+    <beans:bean id="itemManagerService" class="com.sv.orderapp.item_manager.ItemManagerServiceImpl">
+    </beans:bean>
+    <!--END ITEM MANAGER-->
+    
+    <!--START CUSTOMER MANAGER-->
+    <beans:bean id="customerRepository" class="com.sv.orderapp.customer_control_panel.CustomerRepositoryImpl">
+    </beans:bean>
+    
+    <beans:bean id="customerService" class="com.sv.orderapp.customer_control_panel.CustomerServiceImpl">
+    </beans:bean>
+    <!--END CUSTOMER MANAGER-->
+    
+    <!--START SUPPLIER MANAGER-->
+    <beans:bean id="supplierRepository" class="com.sv.orderapp.supplier_control_panel.SupplierRepositoryImpl">
+    </beans:bean>
+    
+    <beans:bean id="supplierService" class="com.sv.orderapp.supplier_control_panel.SupplierServiceImpl">
+    </beans:bean>
+    <!--END SUPPLIER MANAGER-->
+    
+    
+    <!--START USER MANAGER-->
+    <beans:bean id="userRepository" class="com.sv.orderapp.user_control_panel.UserRepositoryImpl">
+    </beans:bean>
+    
+    <beans:bean id="userService" class="com.sv.orderapp.user_control_panel.UserServiceImpl">
+    </beans:bean>
+    <!--END USER MANAGER-->
+    
+    <context:component-scan base-package="com.sv.orderapp"/>
+    
+    <!-- Configure to plugin JSON as request and response in method handler -->
+    <beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <beans:property name="messageConverters">
+            <beans:list>
+                <beans:ref bean="jsonMessageConverter"/>
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+    
+    <!-- Configure bean to convert JSON to POJO and vice versa -->
+    <beans:bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+    </beans:bean>	
+        
+    <tx:annotation-driven/>
+    <mvc:annotation-driven/>
+</beans:beans>

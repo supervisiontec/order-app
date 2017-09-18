@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--Theme.AppCompat.DayNight.NoActionBar-->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+        <!--<item name="android:typeface">sans-serif-light</item>-->
+        <!--<item name="android:textColor">@color/colorAccent</item>-->
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+
+        <!--<item name="android:textViewStyle">@style/RobotoTextViewStyle</item>-->
+        <!--<item name="android:buttonStyle">@style/RobotoButtonStyle</item>-->
+    </style>
+
+
+
+    <style name="AppTheme.TextSmall" parent="AppTheme">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_light</item>
+    </style>
+
+    <style name="AppTheme.TextSmall.Dark" parent="AppTheme.TextSmall">
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+
+
+    <style name="AppTheme.TextMedium" parent="AppTheme">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_light</item>
+    </style>
+
+    <style name="AppTheme.TextMedium.Dark" parent="AppTheme">
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+
+
+    <style name="AppTheme.TextLarge" parent="AppTheme">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_light</item>
+    </style>
+
+    <style name="AppTheme.TextLarge.Dark" parent="AppTheme.TextLarge">
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+
+    <style name="AppTheme.TextLarge.White" parent="AppTheme.TextLarge">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

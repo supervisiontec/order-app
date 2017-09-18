@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+
+    android:paddingBottom="8dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp">
+    <!--android:gravity="center_vertical"-->
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="top">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/avatar_product"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="2dp" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/primary_text"
+            style="@style/AppTheme.TextMedium.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+
+
+        <TextView
+            android:id="@+id/secondary_text"
+            style="@style/AppTheme.TextSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(022321-XL)" />
+
+        <TextView
+            android:id="@+id/tertiary_text"
+            style="@style/AppTheme.TextSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price: Rs. 1,025.00" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/discount_percent"
+                style="@style/AppTheme.TextLarge.Dark"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/quantity"
+                style="@style/AppTheme.TextLarge.Dark"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:inputType="number" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
